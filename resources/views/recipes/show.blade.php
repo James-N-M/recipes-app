@@ -13,20 +13,22 @@
         <main class="flex flex-wrap">
             <div class="w-2/3">
                 <h2 class="font-normal text-2xl mb-4 text-grey-dark">Steps</h2>
-                @foreach($recipe->steps as $step)
-                    <div class="px-3 pb-6 my-2">
-                        <div class="bg-white p-5 rounded-lg shadow">
-
-                            <h3 class="font-hairline">{{$step->description}}</h3>
+                    @foreach($recipe->steps as $step)
+                        <div class="px-3 pb-6 my-2">
+                            <form method="POST" action="{{$step->path()}}">
+                                @method('PATCH')
+                                @csrf
+                                <div class="flex w-full bg-white p-5 rounded-lg shadow">
+                                    <input name="description" class="w-full text-lg font-hairline" value="{{ $step->description }}">
+                                    <i class="fas fa-wrench"></i>
+                                </div>
+                            </form>
                         </div>
-                    </div>
-                @endforeach
-
+                    @endforeach
                 <div class="px-3 pb-6 my-2">
                     <form action="{{ $recipe->path() . '/steps' }}" method="POST" >
                         @csrf
                         <div class="bg-white p-5 rounded-lg shadow">
-                            {{--<h3 class="font-hairline">No steps have been added yet ! </h3>--}}
                             <input placeholder="Add a new step..." class="w-full" name="description">
                         </div>
                     </form>
