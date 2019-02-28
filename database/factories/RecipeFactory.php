@@ -10,5 +10,6 @@ $factory->define(App\Recipe::class, function (Faker $faker) {
         'description' => $faker->sentence(4),
         'difficulty' => $faker->numberBetween(1,5),
         'time' => $faker->numberBetween(1,60),
+        'notes' => $faker->text,
     ];
 });

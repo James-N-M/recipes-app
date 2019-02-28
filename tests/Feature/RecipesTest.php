@@ -19,6 +19,7 @@ class RecipesTest extends TestCase
         $recipe = factory('App\Recipe')->create();
 
         // so that non signed in users cant check your recipes
+        $this->get('/recipes/create')->assertRedirect('/login');
         $this->get('/recipes')->assertRedirect('/login');
         $this->get("/recipes/$recipe->id")->assertRedirect('/login');
     }
@@ -34,13 +35,29 @@ class RecipesTest extends TestCase
           'description' => $this->faker->sentence,
           'difficulty' => $this->faker->numberBetween(1,5),
           'time' => $this->faker->numberBetween(1,5),
+            'notes' => $this->faker->text,
         ];
 
-        $this->post('/recipes', $attributes); // remove the assert redirect  its mundane ..
+        $this->get('/recipes/create')->assertStatus(200); // they can access a create page
+
+        $this->post('/recipes', $attributes);
 
         $this->assertDatabaseHas('recipes', $attributes);
 
         $this->get('/recipes')->assertSee($attributes['name']);
+    }
+
+    public function test_a_user_can_update_a_recipe()
+    {
+        $this->withoutExceptionHandling(); // when exceptions are thrown laravel catches them but we want the exception
+
+        $this->signIn();
+
+        $recipe = factory(Recipe::class)->create(['user_id' => auth()->id()]);
+
+        $this->patch($recipe->path(), ['notes' => 'this is a note','difficulty' => 2]);
+
+        $this->assertDatabaseHas('recipes', ['difficulty' => 2]);
     }
 
     public function test_a_user_can_view_their_recipe()
@@ -54,6 +71,19 @@ class RecipesTest extends TestCase
 
         $this->get($recipe->path())
             ->assertSee($recipe->name);
+    }
+
+    public function test_the_owner_of_a_recipe_may_update_it()
+    {
+        $this->withExceptionHandling();
+        $this->signIn();
+
+        $recipe = factory(Recipe::class)->create();
+
+        $this->patch($recipe->path(), ['notes' => 'the new updated notes section'])
+            ->assertStatus(403);
+
+        $this->assertDatabaseMissing('recipes', ['notes' => 'the new updated notes section']);
     }
 
     public function testRecipeRequiresName()

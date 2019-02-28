@@ -8,6 +8,7 @@ class RecipeStep extends Model
 {
     protected $guarded = [];
 
+    protected $touches = ['recipe'];
 
     public function path()
     {

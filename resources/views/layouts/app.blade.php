@@ -18,14 +18,15 @@
 </head>
 <body>
     <div id="app">
-        <nav class="flex h-16 items-center justify-between navbar-laravel">
-            <div>
-                <h1>Recipes App</h1>
+        <nav class="bg-blue-light flex h-16 items-center justify-between navbar-laravel">
+            <div class="flex items-center">
+                <i class="fas fa-utensils text-3xl ml-10 mr-5"></i>
+                <h1 class="font-thin">Recipes App</h1>
             </div>
             <div>
                 <ul>
                     <li><a href="/">user name go here</a></li>
-                    <li><a>Logout</a></li>
+                    <li><a  href="logout">Logout</a></li>
                 </ul>
             </div>
         </nav>

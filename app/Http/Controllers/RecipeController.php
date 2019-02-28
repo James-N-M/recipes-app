@@ -35,6 +35,18 @@ class RecipeController extends Controller
         return view('recipes.edit', compact('recipe'));
     }
 
+    public function update(Recipe $recipe, Request $request)
+    {
+        $this->authorize('update', $recipe);
+
+        $recipe->update([
+            //'notes' => request('notes'),
+            'difficulty' => request('difficulty')
+        ]);
+
+        return redirect($recipe->path());
+    }
+
     public function store()
     {
         $attributes = request()->validate([
@@ -42,6 +54,7 @@ class RecipeController extends Controller
             'description' => 'required',
             'difficulty' => 'required',
             'time' => 'required',
+            'notes' => 'min:3'
         ]);
 
         $attributes['user_id'] = auth()->id();

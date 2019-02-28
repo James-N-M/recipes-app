@@ -9,9 +9,7 @@ class RecipeStepController extends Controller
 {
     public function store(Recipe $recipe)
     {
-        if(auth()->user()->id != $recipe->user_id) {
-            abort(403);
-        }
+        $this->authorize('update', $recipe);
 
         request()->validate(['description' => 'required']);
 
@@ -22,9 +20,8 @@ class RecipeStepController extends Controller
 
     public function update(Recipe $recipe, RecipeStep $step)
     {
-        if(auth()->user()->id != $recipe->user_id) {
-            abort(403);
-        }
+        $this->authorize('update', $step->recipe);
+
         $step->update([
             'description' => request('description')
         ]);

@@ -19,8 +19,8 @@
                                 @method('PATCH')
                                 @csrf
                                 <div class="flex w-full bg-white p-5 rounded-lg shadow">
-                                    <input name="description" class="w-full text-lg font-hairline" value="{{ $step->description }}">
-                                    <i class="fas fa-wrench"></i>
+                                    {{--<input name="description" class="w-full text-lg font-hairline" value="{{ $step->description }}">--}}
+                                    <div class="w-full text-lg font-hairline">{{ $step->description }}</div>
                                 </div>
                             </form>
                         </div>
@@ -36,7 +36,12 @@
 
                 <h2 class="font-normal text-2xl mb-4 text-grey-dark">General Notes</h2>
                 <div class="px-3 pb-6 my-2">
-                    <textarea class="bg-white p-5 rounded-lg shadow w-full" placeholder="Lorem ipsum" name="" id="" rows="10"></textarea>
+                    <form action="{{ $recipe->path() }}" method="POST" >
+                        @method('PATCH')
+                        @csrf
+                        <textarea class="bg-white p-5 rounded-lg shadow w-full" placeholder="Lorem ipsum" name="notes" id="" rows="10">{{ $recipe->notes }}</textarea>
+                        <button class="mt-5 bg-blue font-bold px-4 py-2 rounded-lg text-white" type="submit">Save</button>
+                    </form>
                 </div>
             </div>
             <div class="w-1/3">
