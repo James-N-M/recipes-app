@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="w-1/2 m-auto h-64 flex justify-center items-center" style="height:20rem">
-    <form class="bg-white mb-4 pb-8 pt-6 px-8 rounded shadow-md " method="POST" action="{{ route('login') }}">
+    <form class="bg-white mb-4 pb-8 pt-6 px-8 rounded shadow-md w-1/2" method="POST" action="{{ route('login') }}">
         @csrf
         <div>
             <div class="mb-4">

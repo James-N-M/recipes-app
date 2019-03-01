@@ -25,18 +25,15 @@
                 <h1 class="font-thin">Recipes App</h1>
             </div>
             <div>
-                <ul>
-                    <li><a href="/">user name go here</a></li>
-                    <a href="{{ route('logout') }}"
-                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                        {{ __('Logout') }}
-                    </a>
+                <a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                                                 document.getElementById('logout-form').submit();">
+                    <i class="text-white mr-6 fas fa-sign-out-alt text-3xl"></i>
+                </a>
 
-                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                        @csrf
-                    </form>
-                </ul>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    @csrf
+                </form>
             </div>
         </nav>
 
