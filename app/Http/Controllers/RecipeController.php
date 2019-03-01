@@ -39,10 +39,15 @@ class RecipeController extends Controller
     {
         $this->authorize('update', $recipe);
 
-        $recipe->update([
-            //'notes' => request('notes'),
-            'difficulty' => request('difficulty')
+        $attributes = request()->validate([
+            'name' => 'required | sometimes',
+            'description' => 'required | sometimes',
+            'difficulty' => 'required | sometimes',
+            'time' => 'required | sometimes',
+            'notes' => 'min:3 | sometimes'
         ]);
+
+        $recipe->update($attributes);
 
         return redirect($recipe->path());
     }

@@ -12,23 +12,23 @@
             <form class="w-full" action="/recipes" method="POST">
                 @csrf
                 <div class="flex items-center justify-center mb-6">
-                    <div class="">
+                    <div class="1/5">
                         <label class="block text-black font-bold mb-1 pr-4"for="">
                             Name
                         </label>
                     </div>
-                    <div class="">
+                    <div class="w-1/2">
                         <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="name">
                     </div>
                 </div>
 
                 <div class="flex items-center justify-center mb-6">
-                    <div class="">
+                    <div class="1/5">
                         <label class="block text-black font-bold mb-1 pr-4"for="">
                             Description
                         </label>
                     </div>
-                    <div class="">
+                    <div class="w-1/2">
                         <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="description">
                     </div>
                 </div>
