@@ -70,5 +70,13 @@
             <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Update</button>
 
         </form>
+
+        <h3>Recipe Image Upload Form</h3>
+        <form class="w-full" action="{{$recipe->path() . "/images"}}" method="POST" enctype="multipart/form-data">
+            @csrf
+            <label for="">Image Upload</label>
+            <input type="file" name="image">
+            <button type="submit">Upload Photo</button>
+        </form>
     </main>
 @endsection

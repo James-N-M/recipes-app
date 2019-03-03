@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use App\Recipe;
 use App\User;
 use Tests\TestCase;
+use Illuminate\Http\UploadedFile;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -84,6 +86,25 @@ class RecipesTest extends TestCase
             ->assertStatus(403);
 
         $this->assertDatabaseMissing('recipes', ['notes' => 'the new updated notes section']);
+    }
+
+    public function test_the_owner_of_a_recipe_may_upload_a_picture()
+    {
+        $this->withoutExceptionHandling();
+        $this->signIn();
+
+        $recipe = factory(Recipe::class)->create(['user_id' => auth()->id()]);
+
+        Storage::fake('public');
+
+        $this->post($recipe->path() . '/images' , [
+            'image' => $file = UploadedFile::fake()->image('image.jpg')
+        ]);
+
+        $this->assertDatabaseHas('recipe_images', ['name' => $file->hashName()]);
+
+        Storage::disk('public')->assertExists('images/' . $file->hashName()); // check to see the image got uploaded
+
     }
 
     public function testRecipeRequiresName()

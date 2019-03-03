@@ -13,7 +13,9 @@
         <main class="flex flex-wrap">
             <div class="w-2/3">
                 <div class="mb-10">
-                    <img src="{{asset('images/example-food.jpeg')}}" alt="" style="height: 500px; ">
+                    @foreach($recipe->images as $image)
+                        <img src="{{asset('storage/' . $image->file_path)}}" alt="" style="height: 500px; ">
+                    @endforeach
                 </div>
                 <h2 class="font-normal text-2xl mb-4 text-grey-dark">Steps</h2>
                     @foreach($recipe->steps as $step)

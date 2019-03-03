@@ -2,9 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="3ebdde55-b6b9-443b-9471-02f39248d5b3" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/recipes/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/recipes/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Image.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/RecipeImage.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Recipe.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Recipe.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_images_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_recipe_images_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/recipes/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/recipes/edit.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/ImagesTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/Feature/RecipesTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/tests/Feature/RecipesTest.php" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/vendor/beyondcode/laravel-dump-server/" />
     <ignored path="$PROJECT_DIR$/vendor/composer/" />
@@ -106,7 +113,7 @@
     <session id="667511155">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="4" />
           <entry key="project.open.time.1" value="4" />
           <entry key="project.open.time.10" value="1" />
@@ -114,11 +121,11 @@
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.2" value="1" />
           <entry key="project.open.time.5" value="1" />
-          <entry key="project.open.time.6" value="2" />
+          <entry key="project.open.time.6" value="3" />
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="4" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -128,8 +135,9 @@
           <entry key="ico" value="1" />
           <entry key="jpeg" value="7" />
           <entry key="js" value="11" />
-          <entry key="php" value="320" />
+          <entry key="php" value="342" />
           <entry key="phpunit" value="7" />
+          <entry key="png" value="1" />
           <entry key="scss" value="4" />
           <entry key="txt" value="1" />
           <entry key="vue" value="2" />
@@ -139,11 +147,11 @@
       <usages-collector id="statistics.file.types.open">
         <counts>
           <entry key=".env file" value="6" />
-          <entry key="Blade" value="56" />
+          <entry key="Blade" value="58" />
           <entry key="CSS" value="6" />
-          <entry key="Image" value="8" />
+          <entry key="Image" value="9" />
           <entry key="JavaScript" value="11" />
-          <entry key="PHP" value="271" />
+          <entry key="PHP" value="291" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="SCSS" value="4" />
           <entry key="Vue.js" value="2" />
@@ -152,10 +160,10 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="dummy" value="11" />
+          <entry key="dummy" value="29" />
           <entry key="env" value="61" />
           <entry key="js" value="111" />
-          <entry key="php" value="19818" />
+          <entry key="php" value="21291" />
           <entry key="scss" value="2" />
           <entry key="vue" value="1460" />
           <entry key="xml" value="41" />
@@ -164,10 +172,10 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key=".env file" value="61" />
-          <entry key="Blade" value="5861" />
+          <entry key="Blade" value="6094" />
           <entry key="JavaScript" value="111" />
-          <entry key="PHP" value="13957" />
-          <entry key="PLAIN_TEXT" value="11" />
+          <entry key="PHP" value="15197" />
+          <entry key="PLAIN_TEXT" value="29" />
           <entry key="SCSS" value="2" />
           <entry key="Vue.js" value="1460" />
           <entry key="XML" value="41" />
@@ -176,68 +184,125 @@
     </session>
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/recipes/show.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-              <folding>
-                <element signature="e#704#726#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/auth/login.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="84">
-              <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-              <folding>
-                <element signature="e#103#123#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-              <folding>
-                <element signature="e#45#81#0#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="155">
-              <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.54968286">
+      <split-first>
+        <splitter split-orientation="vertical" split-proportion="0.6438632">
+          <split-first>
+            <leaf>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/tests/Feature/RecipesTest.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="618">
+                      <caret line="106" selection-start-line="106" selection-end-line="106" />
+                      <folding>
+                        <element signature="e#33#48#0#PHP" expanded="true" />
+                      </folding>
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeController.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="413">
+                      <caret line="67" selection-start-line="67" selection-end-line="67" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/resources/views/recipes/edit.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="404">
+                      <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/resources/views/recipes/show.blade.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="260">
+                      <caret line="15" column="36" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="67" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeStepController.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="384">
+                      <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Recipe.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="267">
+                      <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/routes/web.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="192">
+                      <caret line="6" selection-start-line="6" selection-end-line="6" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+              <file pinned="false" current-in-tab="false">
+                <entry file="file://$PROJECT_DIR$/app/Policies/RecipePolicy.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="439">
+                      <caret line="16" selection-start-line="15" selection-start-column="5" selection-end-line="16" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-first>
+          <split-second>
+            <leaf>
+              <file pinned="false" current-in-tab="true">
+                <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_recipe_images_table.php">
+                  <provider selected="true" editor-type-id="text-editor">
+                    <state relative-caret-position="197">
+                      <caret line="19" column="37" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="37" />
+                    </state>
+                  </provider>
+                </entry>
+              </file>
+            </leaf>
+          </split-second>
+        </splitter>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeImageController.php">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="705">
+                  <caret line="23" selection-start-line="23" selection-end-line="23" />
+                  <folding>
+                    <element signature="e#40#68#0#PHP" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
       <find>Recipe</find>
       <find>factory</find>
-      <find>image</find>
       <find>text-white</find>
       <find>colors</find>
       <find>right side</find>
@@ -248,6 +313,8 @@
       <find>include</find>
       <find>$recipe</find>
       <find>asset</find>
+      <find>image</find>
+      <find>recipe_image</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -262,8 +329,6 @@
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/database/seeds/RecipesTableSeeder.php" />
         <option value="$PROJECT_DIR$/tests/Feature/ImagesTest.php" />
-        <option value="$PROJECT_DIR$/app/Image.php" />
-        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_images_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/ImageController.php" />
         <option value="$PROJECT_DIR$/webpack.mix.js" />
         <option value="$PROJECT_DIR$/tests/Feature/StepsTest.php" />
@@ -273,7 +338,6 @@
         <option value="$PROJECT_DIR$/tests/TestCase.php" />
         <option value="$PROJECT_DIR$/app/Step.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_22_001904_create_steps_table.php" />
-        <option value="$PROJECT_DIR$/app/Recipe.php" />
         <option value="$PROJECT_DIR$/database/migrations/2019_02_22_002421_create_recipe_steps_table.php" />
         <option value="$PROJECT_DIR$/tests/Unit/RecipeTest.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/step.blade.php" />
@@ -286,21 +350,26 @@
         <option value="$PROJECT_DIR$/database/migrations/2019_02_05_021609_create_recipes_table.php" />
         <option value="$PROJECT_DIR$/database/factories/RecipeFactory.php" />
         <option value="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" />
-        <option value="$PROJECT_DIR$/app/Policies/RecipePolicy.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RecipeStepController.php" />
         <option value="$PROJECT_DIR$/resources/js/app.js" />
         <option value="$PROJECT_DIR$/resources/js/components/RecipeCard.vue" />
         <option value="$PROJECT_DIR$/resources/views/partials/card.blade.php" />
-        <option value="$PROJECT_DIR$/tests/Feature/RecipesTest.php" />
-        <option value="$PROJECT_DIR$/resources/views/recipes/edit.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/RecipeController.php" />
         <option value="$PROJECT_DIR$/resources/views/recipes/create.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
         <option value="$PROJECT_DIR$/resources/views/auth/login.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/app.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/recipes/show.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_images_table.php" />
+        <option value="$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_recipe_images_table.php" />
+        <option value="$PROJECT_DIR$/app/Policies/RecipePolicy.php" />
+        <option value="$PROJECT_DIR$/app/Image.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/tests/Feature/RecipesTest.php" />
+        <option value="$PROJECT_DIR$/app/Recipe.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/RecipeImageController.php" />
+        <option value="$PROJECT_DIR$/resources/views/recipes/edit.blade.php" />
       </list>
     </option>
   </component>
@@ -438,10 +507,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="x" value="361" />
-    <option name="y" value="23" />
-    <option name="width" value="1079" />
-    <option name="height" value="877" />
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -449,6 +516,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -459,23 +527,56 @@
             <path>
               <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="database" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
               <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="storage" type="462c0819:PsiDirectoryNode" />
               <item name="images" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="recipes-app" type="b2602c69:ProjectViewProjectNode" />
+              <item name="recipes-app" type="462c0819:PsiDirectoryNode" />
+              <item name="tests" type="462c0819:PsiDirectoryNode" />
+              <item name="Feature" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="SearchEverywhereHistoryKey" value="show&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;app&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/layouts/app.blade.php&#10;RedirectIfAuthenticated&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/routes/web.php&#10;Authenticate&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Middleware/Authenticate.php&#10;HomeC&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/HomeController.php&#10;Redir&#9;null&#9;null&#10;Logi&#9;null&#9;null&#10;LoginCon&#9;null&#9;null&#10;login.&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/auth/login.blade.php&#10;create.blade&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;app.&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/layouts/app.blade.php&#10;Rec&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;show.bla&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;create.bl&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;RecipesTest&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipesTest.php&#10;create.blade.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;index.blade&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/index.blade.php&#10;public/js&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/public/js&#10;show.b&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;app.js&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/js/app.js&#10;partials/car&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/partials/card.blade.php&#10;RecipeStep&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;AuthS&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Providers/AuthServiceProvider.php&#10;Recipe.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Recipe.php&#10;RecipePo&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Policies/RecipePolicy.php&#10;RecipePoli&#9;null&#9;null&#10;AuthSer&#9;null&#9;null&#10;RecipeStepsT&#9;null&#9;null&#10;RecipeSteps&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipeStepsTest.php&#10;REcipeStepC&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;show.blade.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;factory&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/factories/RecipeFactory.php&#10;create_re&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/migrations/2019_02_05_021609_create_recipes_table.php&#10;REcipesTest&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipesTest.php&#10;User&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/User.php&#10;RecipeController&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;layouts/a&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/layouts/app.blade.php&#10;rec&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;Recipe&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Recipe.php&#10;show.blade&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;RecipeSte&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/RecipeStep.php&#10;REcipe&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Recipe.php&#10;RecipeContr&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;partials/&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/partials&#10;RecipeCon&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;reci[&#9;null&#9;null&#10;RecipeTest&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipesTest.php&#10;factories/&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/factories&#10;migrations/create_re&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/migrations/2019_02_22_002421_create_recipe_steps_table.php" />
+    <property name="SearchEverywhereHistoryKey" value="show.bla&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;recipe.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Recipe.php&#10;storage&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/storage&#10;images&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/public/images&#10;edit.blade.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/edit.blade.php&#10;Feature/&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature&#10;RecipeTest&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipesTest.php&#10;ImageCont&#9;null&#9;null&#10;web.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/routes/web.php&#10;RecipeStepControl&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;Image.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Image.php&#10;Policy&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Policies/RecipePolicy.php&#10;RecipeController&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;migrations&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/migrations&#10;RecipeImageController&#9;null&#9;null&#10;Recipes&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipeStepsTest.php&#10;RecipesTep&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipeStepsTest.php&#10;Login&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/Auth/LoginController.php&#10;show&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;app&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/layouts/app.blade.php&#10;RedirectIfAuthenticated&#9;null&#9;null&#10;Authenticate&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Middleware/Authenticate.php&#10;HomeC&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/HomeController.php&#10;Redir&#9;null&#9;null&#10;Logi&#9;null&#9;null&#10;LoginCon&#9;null&#9;null&#10;login.&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/auth/login.blade.php&#10;create.blade&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;app.&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/layouts/app.blade.php&#10;Rec&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeController.php&#10;create.bl&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;RecipesTest&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipesTest.php&#10;create.blade.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/create.blade.php&#10;index.blade&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/index.blade.php&#10;public/js&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/public/js&#10;show.b&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;app.js&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/js/app.js&#10;partials/car&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/partials/card.blade.php&#10;RecipeStep&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;AuthS&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Providers/AuthServiceProvider.php&#10;Recipe.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Recipe.php&#10;RecipePo&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Policies/RecipePolicy.php&#10;RecipePoli&#9;null&#9;null&#10;AuthSer&#9;null&#9;null&#10;RecipeStepsT&#9;null&#9;null&#10;RecipeSteps&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/tests/Feature/RecipeStepsTest.php&#10;REcipeStepC&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/app/Http/Controllers/RecipeStepController.php&#10;show.blade.php&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/resources/views/recipes/show.blade.php&#10;factory&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/factories/RecipeFactory.php&#10;create_re&#9;FILE&#9;file:///Users/jamesm/Documents/laravel-sites/recipes-app/database/migrations/2019_02_05_021609_create_recipes_table.php" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -532,18 +633,19 @@
       <workItem from="1551038559892" duration="3214000" />
       <workItem from="1551053153523" duration="7526000" />
       <workItem from="1551229111488" duration="4806000" />
-      <workItem from="1551320691403" duration="7592000" />
+      <workItem from="1551320691403" duration="7895000" />
+      <workItem from="1551446326688" duration="454000" />
+      <workItem from="1551465460847" duration="4839000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94082000" />
+    <option name="totallyTimeSpent" value="99678000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="0" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.29470673" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24440895" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -558,7 +660,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2860858" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.2444668" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -608,61 +710,8 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/robots.txt">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="677">
-          <caret line="17716" column="3" selection-start-line="17716" selection-start-column="3" selection-end-line="17716" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tailwind.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="53" column="7" selection-start-line="53" selection-start-column="3" selection-end-line="53" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/RecipeSteps.php" />
-    <entry file="file://$PROJECT_DIR$/resources/sass/app.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="4" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_001904_create_steps_table.php" />
     <entry file="file://$PROJECT_DIR$/app/Step.php" />
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_002421_create_recipe_steps_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="17" column="46" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/partials/step.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -709,41 +758,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="408">
           <caret line="12" column="32" selection-start-line="12" selection-start-column="32" selection-end-line="12" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_05_021609_create_recipes_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="586">
-          <caret line="22" column="36" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/RecipeStepsTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="65" selection-start-line="65" selection-end-line="77" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Recipe.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="641">
-          <caret line="32" column="26" selection-start-line="32" selection-start-column="26" selection-end-line="32" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Policies/RecipePolicy.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeStepController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="19" selection-start-line="10" selection-end-line="19" />
         </state>
       </provider>
     </entry>
@@ -828,19 +842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="200">
           <caret line="8" column="63" selection-start-line="8" selection-start-column="57" selection-end-line="8" selection-end-column="106" />
-          <folding>
-            <element signature="e#670#691#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/Feature/RecipesTest.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-          <folding>
-            <element signature="e#33#48#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -865,23 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="17" column="5" lean-forward="true" selection-start-line="17" selection-start-column="5" selection-end-line="17" selection-end-column="5" />
-          <folding>
-            <element signature="e#40#55#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/recipes/edit.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="122">
-          <caret line="62" column="29" lean-forward="true" selection-start-line="62" selection-start-column="29" selection-end-line="62" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/AuthenticatesUsers.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-3773">
@@ -894,40 +878,21 @@
         <state relative-caret-position="-158" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="8" lean-forward="true" selection-start-line="8" selection-end-line="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="680">
           <caret line="20" column="30" selection-start-line="20" selection-start-column="30" selection-end-line="20" selection-end-column="30" />
-          <folding>
-            <element signature="e#39#51#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="16" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Controller.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
-          <folding>
-            <element signature="e#45#81#0#PHP" expanded="true" />
-          </folding>
+        <state relative-caret-position="1292">
+          <caret line="38" column="4" selection-start-line="38" selection-start-column="4" selection-end-line="38" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -935,26 +900,148 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="84">
           <caret line="4" column="69" selection-start-line="4" selection-start-column="69" selection-end-line="4" selection-end-column="69" />
-          <folding>
-            <element signature="e#103#123#0#HTML" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/app.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="155">
+        <state relative-caret-position="170">
           <caret line="5" column="37" lean-forward="true" selection-start-line="5" selection-start-column="37" selection-end-line="5" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/TestCase.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/RecipeStepsTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="5">
+          <caret line="41" column="25" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_05_021609_create_recipes_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="549">
+          <caret line="22" column="36" lean-forward="true" selection-start-line="22" selection-start-column="36" selection-end-line="22" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_22_002421_create_recipe_steps_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="399">
+          <caret line="19" column="33" lean-forward="true" selection-start-line="19" selection-start-column="33" selection-end-line="19" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/Auth/Access/AuthorizesRequests.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="231">
+          <caret line="18" column="20" selection-start-line="18" selection-start-column="20" selection-end-line="18" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Policies/RecipePolicy.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="439">
+          <caret line="16" selection-start-line="15" selection-start-column="5" selection-end-line="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="6" column="6" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/Feature/RecipesTest.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="618">
+          <caret line="106" selection-start-line="106" selection-end-line="106" />
+          <folding>
+            <element signature="e#33#48#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeStepController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="384">
+          <caret line="17" column="41" selection-start-line="17" selection-start-column="41" selection-end-line="17" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/database/migrations/2019_02_15_234248_create_recipe_images_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="197">
+          <caret line="19" column="37" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/RecipeImage.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="6" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeImageController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="705">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+          <folding>
+            <element signature="e#40#68#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/storage/app/public/images/zudcgh76QfFxCBOiiJNx12I3EztCG1A0FqtIiMRb.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Recipe.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="267">
+          <caret line="28" column="5" selection-start-line="28" selection-start-column="5" selection-end-line="28" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/RecipeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/recipes/show.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
-          <folding>
-            <element signature="e#704#726#0#HTML" expanded="true" />
-          </folding>
+        <state relative-caret-position="260">
+          <caret line="15" column="36" selection-start-line="15" selection-start-column="30" selection-end-line="15" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/recipes/edit.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="404">
+          <caret line="82" column="31" selection-start-line="82" selection-start-column="31" selection-end-line="82" selection-end-column="31" />
         </state>
       </provider>
     </entry>

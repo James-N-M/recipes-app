@@ -23,14 +23,20 @@ class Recipe extends Model
         return $this->hasMany('App\RecipeStep');
     }
 
-    public function imagePath()
+    public function images()
     {
-        return $this->image_path;
+        return $this->hasMany('App\RecipeImage');
     }
 
     public function addStep($description)
     {
         return $this->steps()->create(compact('description'));
+    }
+
+    public function addImage()
+    {
+
+        return $this->images()->create(compact('name', 'file_path'));
     }
 
 }
