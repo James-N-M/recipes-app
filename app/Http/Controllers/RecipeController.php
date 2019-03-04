@@ -59,7 +59,7 @@ class RecipeController extends Controller
             'description' => 'required',
             'difficulty' => 'required',
             'time' => 'required',
-            'notes' => 'min:3'
+            'notes' => 'min:3 | sometimes'
         ]);
 
         $attributes['user_id'] = auth()->id();

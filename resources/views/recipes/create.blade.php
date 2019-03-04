@@ -8,67 +8,41 @@
             </div>
         </header>
 
-        <main>
-            <form class="w-full" action="/recipes" method="POST">
-                @csrf
-                <div class="flex items-center justify-center mb-6">
-                    <div class="1/5">
-                        <label class="block text-black font-bold mb-1 pr-4"for="">
+        <main class="w-full">
+            <h1 class="text-center mb-6 font-hairline">Add Recipe</h1>
+            <div class="w-1/2 m-auto">
+                <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="/recipes" method="POST">
+                    @csrf
+                    <div class="mb-4">
+                        <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
                             Name
                         </label>
+                        <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
                     </div>
-                    <div class="w-1/2">
-                        <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="name">
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-center mb-6">
-                    <div class="1/5">
-                        <label class="block text-black font-bold mb-1 pr-4"for="">
+                    <div class="mb-4">
+                        <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
                             Description
                         </label>
+                        <textarea name="description" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text"></textarea>
                     </div>
-                    <div class="w-1/2">
-                        <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="description">
-                    </div>
-                </div>
+                    <div class="mb-4 flex justify-between">
+                        <div>
+                            <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                Difficulty
+                            </label>
+                            <input name="difficulty" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="number">
+                        </div>
 
-                <div class="flex items-center justify-center mb-6">
-                    <div class="">
-                        <label class="block text-black font-bold mb-1 pr-4"for="">
-                            Difficulty
-                        </label>
+                        <div>
+                            <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                Time
+                            </label>
+                            <input name="time" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="number">
+                        </div>
                     </div>
-                    <div class="">
-                        <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="difficulty">
-                    </div>
-                </div>
-
-                <div class="flex items-center justify-center mb-6">
-                    <div class="">
-                        <label class="block text-black font-bold mb-1 pr-4"for="">
-                            Time
-                        </label>
-                    </div>
-                    <div class="">
-                        <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="time">
-                    </div>
-                </div>
-
-
-                <div class="flex items-center justify-center mb-6">
-                    <div class="">
-                        <label class="block text-black font-bold mb-1 pr-4"for="">
-                            Notes
-                        </label>
-                    </div>
-                    <div class="">
-                        <input class="bg-white appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight focus:outline-none focus:bg-white focus:border-purple" type="text" name="notes">
-                    </div>
-                </div>
-                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Create</button>
-
-            </form>
+                    <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Create</button>
+                </form>
+            </div>
         </main>
 
 
