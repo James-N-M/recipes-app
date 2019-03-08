@@ -12,7 +12,12 @@ Route::group(['middleware' => 'auth'], function() {
     Route::patch('recipes/{recipe}/steps/{step}', 'RecipeStepController@update');
 });
 
-
 Auth::routes();
 
-// Route::get('/', 'HomeController@index')->name('home');
+Route::get('/demo', function () {
+    return new App\Mail\RecipeEmail(factory('App\Recipe')->create());
+});
+
+Route::get('/', function () {
+    echo "welcome";
+});

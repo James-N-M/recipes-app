@@ -6,14 +6,20 @@
 
         <div class="text-grey-dark">{{ str_limit($recipe->description, 100) }}</div>
         <div class="flex justify-between">
-            <div>
-                @for ($i = 0; $i < 5; $i++)
-                    @if ($i < $recipe->difficulty)
-                        <i class="fas fa-star text-blue"></i>
-                    @else
-                        <i class="far fa-star"></i>
-                    @endif
-                @endfor
+            <div class="flex">
+                <div>
+                    @for ($i = 0; $i < 5; $i++)
+                        @if ($i < $recipe->difficulty)
+                            <i class="fas fa-star text-blue"></i>
+                        @else
+                            <i class="far fa-star"></i>
+                        @endif
+                    @endfor
+                </div>
+                <div class="ml-4">
+                    <i class="far fa-clock"></i>
+                    <i>{{$recipe->time}}</i>
+                </div>
             </div>
             <div>
                 <a class="text-black"href="{{$recipe->path()}}/edit"><i class="fas fa-wrench"></i></a>

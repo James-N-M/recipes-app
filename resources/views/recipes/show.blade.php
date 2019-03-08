@@ -24,14 +24,13 @@
                                 @method('PATCH')
                                 @csrf
                                 <div class="flex w-full bg-white p-5 rounded-lg shadow">
-                                    {{--<input name="description" class="w-full text-lg font-hairline" value="{{ $step->description }}">--}}
                                     <div class="w-full text-lg font-hairline">{{ $step->description }}</div>
                                 </div>
                             </form>
                         </div>
                     @endforeach
                 <div class="px-3 pb-6 my-2">
-                    <form action="{{ $recipe->path() . '/steps' }}" method="POST" >
+                    <form action="{{ $recipe->path() . '/steps' }}" method="POST">
                         @csrf
                         <div class="bg-white p-5 rounded-lg shadow">
                             <input placeholder="Add a new step..." class="w-full" name="description">
