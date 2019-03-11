@@ -107,6 +107,15 @@ class RecipesTest extends TestCase
 
     }
 
+//    public function test_the_owner_of_a_recipe_may_email_it_to_someone()
+//    {
+//        $this->withoutExceptionHandling();
+//        $this->signIn();
+//        $recipe = factory(Recipe::class)->create(['user_id' => auth()->id()]);
+//
+//        $this->post($recipe->path() . '/email', ['email' => 'test@test.com'])->assertStatus(302);
+//    }
+
     public function testRecipeRequiresName()
     {
         $this->signIn();

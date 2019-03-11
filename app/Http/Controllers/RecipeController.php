@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Recipe;
+use App\Mail\RecipeEmail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Http\Request;
 
 class RecipeController extends Controller
@@ -68,4 +70,11 @@ class RecipeController extends Controller
 
         return redirect($recipe->path());
     }
+
+    public function email(Recipe $recipe)
+    {
+        Mail::to(request('email'))->send(new RecipeEmail($recipe));
+        return redirect($recipe->path());
+    }
+
 }

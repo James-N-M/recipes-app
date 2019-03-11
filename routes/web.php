@@ -3,6 +3,8 @@
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('recipes', 'RecipeController');
 
+    Route::post('recipes/{recipe}/email', 'RecipeController@email');
+
     Route::resource('steps', 'StepController');
 
     Route::post('recipes/{recipe}/steps', 'RecipeStepController@store');

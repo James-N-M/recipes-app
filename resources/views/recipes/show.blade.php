@@ -54,5 +54,12 @@
         </main>
     </div>
 
+    <form action="/recipes/{{$recipe->id}}}/email" method="POST">
+        @csrf
+        <input name="email" type="text">
+        <input type="text" name="info">
+        <button type="submit">send test email</button>
+    </form>
+
 @endsection
 

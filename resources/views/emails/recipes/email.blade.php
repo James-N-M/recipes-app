@@ -3,31 +3,23 @@
 
 {{$recipe->description}}
 
-<div>
-    Time: <i>{{$recipe->time}} minutes</i>
-</div>
-
-<div>
-    Difficulty: <i>1/{{$recipe->difficulty}}</i>
-</div>
-
-@component('mail::panel')
-    <ol>
-    @foreach($recipeSteps as $step)
-        <li>{{$step->description}}</li>
-    @endforeach
-    </ol>
-@endcomponent
-
 @component('mail::table')
-    | Ingredient    | Amount     |
-    | ------------- |:-------------:|
-    | item      | 1 tsp      |
-    | item 2      | 2 tsp |
+    | Ingredient    | Amount        |
+    | :-------------: |:-------------:|
+    | Sugar       | 2 tbl      |
+    | Love      | 1 cup |
 @endcomponent
 
-@component('mail::button', ['url' => '/recipes/add'])
-    Add To Cookbook
+<ul>
+@forelse ($recipe->steps as $step)
+<li>{{$step->description}}</li>
+@empty
+## No steps included
+@endforelse
+</ul>
+
+@component('mail::button', ['url' => ''])
+Add To Cookbook
 @endcomponent
 
 Thanks,<br>

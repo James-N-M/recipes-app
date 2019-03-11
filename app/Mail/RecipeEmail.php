@@ -12,8 +12,7 @@ class RecipeEmail extends Mailable
 {
     use Queueable, SerializesModels;
 
-    protected $recipe;
-
+    public $recipe;
     public function __construct(Recipe $recipe)
     {
         $this->recipe = $recipe;
@@ -26,10 +25,6 @@ class RecipeEmail extends Mailable
      */
     public function build()
     {
-        return $this->markdown('emails.recipes.email')
-            ->with([
-                'recipe' => $this->recipe,
-                'recipeSteps' =>$this->recipe->steps,
-            ]);
+        return $this->markdown('emails.recipes.email')->with(['recipe' => $this->recipe]);
     }
 }
