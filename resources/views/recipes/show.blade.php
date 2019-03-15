@@ -50,6 +50,34 @@
             </div>
             <div class="w-1/3">
                 @include('partials/card')
+
+                <div class="px-3 pb-6">
+                    <div class="bg-white flex flex-col justify-between p-5 rounded-lg shadow">
+                        <h3 class="font-normal text-xl py-4 -ml-5 border-l-4 border-blue-light pl-4">
+                            Send To A Friend
+                        </h3>
+
+                        <div class="flex justify-between">
+                            <form class="" action="/recipes" method="POST">
+                                @csrf
+                                <div class="mb-4">
+                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                        Email
+                                    </label>
+                                    <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
+                                </div>
+                                <div class="mb-4">
+                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                        Email
+                                    </label>
+                                    <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
+                                </div>
+                                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Create</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </main>
     </div>
