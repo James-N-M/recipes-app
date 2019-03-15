@@ -58,21 +58,21 @@
                         </h3>
 
                         <div class="flex justify-between">
-                            <form class="" action="/recipes" method="POST">
+                            <form action="/recipes/{{$recipe->id}}}/email" method="POST">
                                 @csrf
                                 <div class="mb-4">
-                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="email">
                                         Email
                                     </label>
-                                    <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
+                                    <input name="email" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
-                                        Email
+                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="message">
+                                        Message
                                     </label>
-                                    <input name="name" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
+                                    <input name="message" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="text">
                                 </div>
-                                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Create</button>
+                                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Send</button>
                             </form>
                         </div>
                     </div>
@@ -81,13 +81,6 @@
             </div>
         </main>
     </div>
-
-    <form action="/recipes/{{$recipe->id}}}/email" method="POST">
-        @csrf
-        <input name="email" type="text">
-        <input type="text" name="info">
-        <button type="submit">send test email</button>
-    </form>
 
 @endsection
 
