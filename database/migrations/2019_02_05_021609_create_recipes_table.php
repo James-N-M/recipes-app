@@ -20,6 +20,7 @@ class CreateRecipesTable extends Migration
             $table->text('description');
             $table->integer('difficulty');
             $table->integer('time');
+            $table->text('ingredients')->nullable();
             $table->string('notes')->nullable();
             $table->timestamps();
         });

@@ -19,6 +19,7 @@
                 <div class="ml-4">
                     <i class="far fa-clock"></i>
                     <i>{{$recipe->time}}</i>
+                    <i>minutes</i>
                 </div>
             </div>
             <div>

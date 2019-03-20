@@ -46,6 +46,7 @@ class RecipeController extends Controller
             'description' => 'required | sometimes',
             'difficulty' => 'required | sometimes',
             'time' => 'required | sometimes',
+            'ingredients' => 'min:3 | sometimes',
             'notes' => 'min:3 | sometimes'
         ]);
 
@@ -61,6 +62,7 @@ class RecipeController extends Controller
             'description' => 'required',
             'difficulty' => 'required',
             'time' => 'required',
+            'ingredients' => 'min:3 | sometimes',
             'notes' => 'min:3 | sometimes'
         ]);
 
@@ -73,7 +75,9 @@ class RecipeController extends Controller
 
     public function email(Recipe $recipe)
     {
-        Mail::to(request('email'))->send(new RecipeEmail($recipe));
+        $message = request('message');
+
+        Mail::to(request('email'))->send(new RecipeEmail($recipe, $message));
         return redirect($recipe->path());
     }
 

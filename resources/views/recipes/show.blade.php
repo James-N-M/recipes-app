@@ -13,10 +13,34 @@
         <main class="flex flex-wrap">
             <div class="w-2/3">
                 <div class="mb-10">
-                    @foreach($recipe->images as $image)
+                    @forelse($recipe->images as $image)
                         <img src="{{asset('storage/' . $image->file_path)}}" alt="" style="height: 500px; ">
-                    @endforeach
+                    @empty
+                        <div>
+                            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{$recipe->path() . "/images"}}" method="POST" enctype="multipart/form-data">
+                                @csrf
+                                <div class="mb-4">
+                                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
+                                        Image Upload
+                                    </label>
+                                    <input name="image" value="{{$recipe->name}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="file">
+                                </div>
+                                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Upload Photo</button>
+                            </form>
+                        </div>
+                    @endforelse
                 </div>
+
+                <h2 class="font-normal text-2xl mb-4 text-grey-dark">Ingredients</h2>
+                <div class="px-3 pb-6 my-2">
+                    <form action="{{ $recipe->path() }}" method="POST">
+                        @method('PATCH')
+                        @csrf
+                        <textarea class="bg-white p-5 rounded-lg shadow w-full" placeholder="Lorem ipsum" name="ingredients" id="" rows="10">{{ $recipe->ingredients }}</textarea>
+                        <button class="mt-5 bg-blue font-bold px-4 py-2 rounded-lg text-white" type="submit">Save</button>
+                    </form>
+                </div>
+
                 <h2 class="font-normal text-2xl mb-4 text-grey-dark">Steps</h2>
                     @foreach($recipe->steps as $step)
                         <div class="px-3 pb-6 my-2">

@@ -3,25 +3,24 @@
 
 {{$recipe->description}}
 
-@component('mail::table')
-    | Ingredient    | Amount        |
-    | :-------------: |:-------------:|
-    | Sugar       | 2 tbl      |
-    | Love      | 1 cup |
+@component('mail::panel')
+{{$recipe->ingredients}}
 @endcomponent
 
 <ul>
 @forelse ($recipe->steps as $step)
 <li>{{$step->description}}</li>
 @empty
-## No steps included
+No steps included
 @endforelse
 </ul>
+
+<i>Time {{$recipe->time}}</i>
 
 @component('mail::button', ['url' => ''])
 Add To Cookbook
 @endcomponent
 
-Thanks,<br>
+Thanks, {{$message}}<br>
 {{ config('app.name') }}
 @endcomponent
