@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-1/2 m-auto h-64 flex justify-center items-center" style="height:32rem">
+<div class="w-1/2 m-auto h-screen flex justify-center items-center">
     <form class="bg-white mb-4 pb-8 pt-6 px-8 rounded shadow-md w-1/2" method="POST" action="{{ route('register') }}">
         @csrf
-
+        <div class="mb-4">
+            <h1 class="text-center font-thin">Register Here</h1>
+        </div>
         <div>
             <div class="mb-4">
                 <label class="block font-bold mb-2 text-grey-darker text-sm" for="email">Name</label>
@@ -37,8 +39,12 @@
             </div>
         </div>
 
-        <div>
+        <div class="mb-4">
             <button type="submit" class="shadow bg-blue-light focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">Register</button>
+        </div>
+
+        <div>
+            Already a member of recipes ? <a href="/login">Login Here</a>
         </div>
     </form>
 </div>

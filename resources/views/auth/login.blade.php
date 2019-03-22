@@ -1,9 +1,12 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="w-1/2 m-auto h-64 flex justify-center items-center" style="height:20rem">
+<div class="w-1/2 m-auto h-screen flex justify-center items-center">
     <form class="bg-white mb-4 pb-8 pt-6 px-8 rounded shadow-md w-1/2" method="POST" action="{{ route('login') }}">
         @csrf
+        <div class="mb-4">
+            <h1 class="text-center font-thin">Welcome Back</h1>
+        </div>
         <div>
             <div class="mb-4">
                 <label class="block font-bold mb-2 text-grey-darker text-sm" for="email" class="">Email Address</label>

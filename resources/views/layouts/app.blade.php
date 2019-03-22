@@ -22,7 +22,9 @@
         <nav class="bg-blue-light flex h-16 items-center justify-between navbar-laravel">
             <div class="flex items-center">
                 <i class="fas fa-utensils text-3xl ml-10 mr-5"></i>
-                <h1 class="font-thin">Recipes App</h1>
+                <a class="no-underline text-black" href="/">
+                    <h1 class="font-thin">Recipes App</h1>
+                </a>
             </div>
             <div>
                 <a href="{{ route('logout') }}"

@@ -8,7 +8,7 @@
             </div>
         </header>
 
-    <main>
+    <main class="">
         <h1 class="text-center mb-6 font-hairline">Edit Recipe</h1>
             <div class="w-1/2 m-auto">
                 <form class="w-full" action="{{$recipe->path()}}" method="POST">
@@ -44,19 +44,5 @@
                     <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Update</button>
                 </form>
             </div>
-
-        <h1 class="text-center mb-6 font-hairline">Add Recipe Image</h1>
-        <div class="w-1/2 m-auto">
-            <form class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" action="{{$recipe->path() . "/images"}}" method="POST" enctype="multipart/form-data">
-                @csrf
-                <div class="mb-4">
-                    <label class="block text-grey-darker text-sm font-bold mb-2" for="name">
-                        Image Upload
-                    </label>
-                    <input name="image" value="{{$recipe->name}}" class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline" type="file">
-                </div>
-                <button type="submit" class="bg-blue font-bold px-4 py-2 rounded-lg text-white">Upload Photo</button>
-            </form>
-        </div>
     </main>
 @endsection
