@@ -1,5 +1,9 @@
 <?php
 
+Route::get('/', function () {
+    return view('home');
+});
+
 Route::group(['middleware' => 'auth'], function() {
     Route::resource('recipes', 'RecipeController');
 
@@ -20,6 +24,3 @@ Route::get('/demo', function () {
     return new App\Mail\RecipeEmail(factory('App\Recipe')->create());
 });
 
-Route::get('/', function () {
-    echo "welcome";
-});
