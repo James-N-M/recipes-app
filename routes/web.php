@@ -16,6 +16,10 @@ Route::group(['middleware' => 'auth'], function() {
     Route::post('recipes/{recipe}/images', 'RecipeImageController@store');
 
     Route::patch('recipes/{recipe}/steps/{step}', 'RecipeStepController@update');
+
+    Route::get('add-to-recipes/{recipe}','RecipeController@emailRecipeIndex');
+
+    Route::post('add-to-recipes/{recipe}','RecipeController@addRecipe');
 });
 
 Auth::routes();

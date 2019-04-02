@@ -73,12 +73,33 @@ class RecipeController extends Controller
         return redirect($recipe->path());
     }
 
+    public function destroy(Recipe $recipe)
+    {
+        $recipe->delete();
+        return redirect('recipes');
+    }
+
     public function email(Recipe $recipe)
     {
         $message = request('message');
 
         Mail::to(request('email'))->send(new RecipeEmail($recipe, $message));
         return redirect($recipe->path());
+    }
+
+    public function emailRecipeIndex(Recipe $recipe)
+    {
+        $steps = $recipe->steps();
+        return view('recipes.add-recipe-email',
+            compact('steps', 'recipe'));
+    }
+
+    public function addRecipe(Recipe $recipe)
+    {
+        $newRecipe = $recipe->replicate();
+        $newRecipe->user_id = auth()->id();
+        $newRecipe->save();
+        return redirect('recipes');
     }
 
 }

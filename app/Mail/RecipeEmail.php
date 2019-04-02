@@ -17,7 +17,7 @@ class RecipeEmail extends Mailable
     {
         $this->recipe = $recipe;
         $this->message = $message;
-        $this->url = url('/');
+        $this->url = url('/') . "/add-to-recipes/{$recipe->id}";
     }
 
     /**

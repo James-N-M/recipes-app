@@ -11,4 +11,31 @@
             </a>
         </div>
     </div>
+
+    <div class="mt-20 flex justify-center mt-20">
+        <div class="border-2 flex flex-col h-48 items-center justify-center shadow-lg w-48 mx-4">
+            <div>
+                <i class="fas fa-hamburger text-5xl"></i>
+            </div>
+            <div class="mt-4">
+                <i>Create and view</i>
+            </div>
+        </div>
+        <div class="border-2 flex flex-col h-48 items-center justify-center shadow-lg w-48 mx-4">
+            <div>
+                <i class="fas fa-camera-retro text-5xl"></i>
+            </div>
+            <div class="mt-4">
+                <i>Take Pictures</i>
+            </div>
+        </div>
+        <div class="border-2 flex flex-col h-48 items-center justify-center shadow-lg w-48 mx-4">
+            <div>
+                <i class="far fa-envelope text-5xl"></i>
+            </div>
+            <div class="mt-4">
+                <i>Share with friends</i>
+            </div>
+        </div>
+    </div>
 @endsection
