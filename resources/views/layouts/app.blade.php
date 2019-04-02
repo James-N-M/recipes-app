@@ -17,7 +17,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
-<body>
+<body class="bg-grey-lightest">
     <div id="app">
         <nav class="bg-blue-light flex h-16 items-center justify-between navbar-laravel">
             <div class="flex items-center">
@@ -39,7 +39,7 @@
             </div>
         </nav>
 
-        <main class="bg-grey-lightest">
+        <main>
             @yield('content')
         </main>
     </div>

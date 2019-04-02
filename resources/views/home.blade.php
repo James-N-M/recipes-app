@@ -1,7 +1,7 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('content')
-    <div class="flex flex-col h-screen items-center pt-20">
+    <div class="flex flex-col items-center pt-20">
         <h1 class="font-light text-5xl">Welcome To Recipes !</h1>
         <div class="mt-10">
             <a class="no-underline text-blue text-lg" href="/register">Sign up</a>

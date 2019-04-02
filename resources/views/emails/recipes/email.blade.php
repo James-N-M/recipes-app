@@ -17,7 +17,7 @@ No steps included
 
 <i>Time {{$recipe->time}}</i>
 
-@component('mail::button', ['url' => ''])
+@component('mail::button', ['url' => "{$link}/add-to-recipes/$recipe->id"])
 Add To Cookbook
 @endcomponent
 

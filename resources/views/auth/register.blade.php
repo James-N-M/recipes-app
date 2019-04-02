@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.guest')
 
 @section('content')
-<div class="w-1/2 m-auto h-screen flex justify-center items-center">
-    <form class="bg-white mb-4 pb-8 pt-6 px-8 rounded shadow-md w-1/2" method="POST" action="{{ route('register') }}">
+<div class="w-1/2 m-auto flex justify-center items-center mt-8">
+    <form class="bg-white border-blue-light border-t-8 mb-4 pb-8 pt-6 px-8 rounded shadow-md w-1/2" method="POST" action="{{ route('register') }}">
         @csrf
         <div class="mb-4">
             <h1 class="text-center font-thin">Register Here</h1>
@@ -44,7 +44,8 @@
         </div>
 
         <div>
-            Already a member of recipes ? <a href="/login">Login Here</a>
+            <p>Already a member of recipes ? </p>
+            <a href="/login">Login Here</a>
         </div>
     </form>
 </div>
